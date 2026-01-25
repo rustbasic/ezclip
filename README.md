@@ -1,8 +1,8 @@
 # 📎 ezClip: Effortless Snippet & Clipboard Manager
 
-| Status | Deploy Link |
-| :---: | :---: |
-| Stable | [https://rustbasic.github.io/ezclip/](https://rustbasic.github.io/ezclip/) |
+| Status | Deploy Link | Deploy Link 2 |
+| :---: | :---: | :---: |
+| Stable | [https://rustbasic.github.io/ezclip/](https://rustbasic.github.io/ezclip/) | [https://rustbasic.github.io/](https://rustbasic.github.io/) | 
 
 ---
 
@@ -27,7 +27,7 @@
 
 ## 💡 How to Use
 
-1.  **Access:** Open the ezClip Web Application here: [https://rustbasic.github.io/ezclip/](https://rustbasic.github.io/ezclip/)
+1.  **Access:** Open the ezClip Web Application here: [https://rustbasic.github.io/ezclip/](https://rustbasic.github.io/ezclip/) or [https://rustbasic.github.io/](https://rustbasic.github.io/)
 2.  **Manage Categories (Side Panel):** Use the left/right panel to create new categories (`+ Add`) or rearrange them. Click on a category name to select it.
 3.  **Manage Items (Central Panel):** Once a category is selected, the central panel displays the individual items (snippets). Use the `+ Add` button to add new items.
 4.  **Copy:** Double-click any item's text field, or press the dedicated `Copy` button next to it.
