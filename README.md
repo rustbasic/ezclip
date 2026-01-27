@@ -1,34 +1,38 @@
 # 📎 ezClip: Effortless Snippet & Clipboard Manager
 
-| Status | Deploy Link | Deploy Link 2 |
+| Status | Primary Link | Mirror Link |
 | :---: | :---: | :---: |
-| Stable | [https://rustbasic.github.io/](https://rustbasic.github.io/) | [https://rustbasic.github.io/ezclip/](https://rustbasic.github.io/ezclip/) | 
+| **Stable** | [https://rustbasic.github.io](https://rustbasic.github.io) | [https://rustbasic.github.io/ezclip](https://rustbasic.github.io/ezclip) | 
 
 ---
 
 ## 🚀 Overview
 
-**ezClip** is a fast and persistent desktop/web application built with Rust and Egui, designed to help you manage frequently used text snippets, code blocks, and clipboard content efficiently. Stop repetitive typing and save time by organizing your text clips into customizable categories, ready for instant access and copying.
+**ezClip** is a high-performance, lightweight text snippet manager built with **Rust** and **egui**. It is designed to help you organize and access your most frequently used code blocks, templates, and text fragments with ease. Whether you are on Desktop or Web (WASM), ezClip ensures your productivity never skips a beat.
+
+![ezClip Screenshot](ezclip-v027.png)
 
 ## ✨ Key Features
 
-*   **Category-Based Organization:** Structure your clips using personalized categories (e.g., Personal, Work, Templates, APIs).
-*   **Persistent Storage:** Your categories and items are automatically saved and restored on shutdown, ensuring your data is always safe.
-*   **One-Click Copy:** Easily copy any stored item to the clipboard with a single click on the "Copy" button or by double-clicking the text input field.
-*   **Flexible UI Layout:** Toggle the category panel between the **Left** and **Right** side using the `L⇔R` button for optimized workflow.
-*   **Notepad Mode:** Switch to a dedicated "Notepad Mode" to view and edit all items within the selected category as a single, multi-line text block. This is perfect for bulk editing or importing lists.
-*   **Easy Management:** Seamlessly add, delete, and rearrange both categories and individual items using dedicated buttons (`+ Add`, `↑`, `↓`, `🗑`).
-*   **Clipboard Monitoring (Desktop):** Display the last copied text in the bottom panel for quick reference.
+*   **📂 Category-Based Organization:** Group your snippets into custom categories like "Work," "Personal," or "API Templates."
+*   **💾 Smart Persistence:** No "Save" button required! Your data is automatically serialized and restored every time you launch the app.
+*   **⚡ Instant Copying:** Copy any item to your clipboard instantly by clicking the 'Copy' button or simply **double-clicking** the text field.
+*   **📝 Advanced Notepad Mode:** View and edit all snippets in a category as a single text block. 
+    *   *Special Logic:* In Notepad Mode, **double-clicking any line** will automatically copy that entire line to your clipboard!
+*   **🔄 Flexible Layout:** Toggle the side panel between **Left** and **Right** with the `L⇔R` button to match your workspace preference.
+*   **🦀 Rust Powered:** Enjoy the memory safety and speed of Rust, with full support for UTF-8 characters (including Korean, Emojis, etc.).
+*   **🔍 Clipboard Monitor (Desktop):** Keep track of your system clipboard history in real-time through the bottom panel.
 
 ## 🛠 Built With
 
-*   **Rust:** For performance and reliability.
-*   **eframe/egui:** For a responsive, cross-platform graphical user interface.
+*   **Rust**: For performance and reliability.
+*   **eframe/egui**: For a smooth, immediate-mode GUI experience across platforms.
+*   **Serde**: For robust data serialization.
 
 ## 💡 How to Use
 
-1.  **Access:** Open the ezClip Web Application here: [https://rustbasic.github.io/](https://rustbasic.github.io/) or [https://rustbasic.github.io/ezclip/](https://rustbasic.github.io/ezclip/)
-2.  **Manage Categories (Side Panel):** Use the left/right panel to create new categories (`+ Add`) or rearrange them. Click on a category name to select it.
-3.  **Manage Items (Central Panel):** Once a category is selected, the central panel displays the individual items (snippets). Use the `+ Add` button to add new items.
-4.  **Copy:** Double-click any item's text field, or press the dedicated `Copy` button next to it.
-5.  **Bulk Edit:** Use the **NotePad Mode** button to transition the items into a single text editor for easy mass modification. When you switch back, the lines are converted back into individual items.
+1.  **Launch:** Open the [ezClip Web Version](https://rustbasic.github.io) or run the native desktop executable.
+2.  **Manage Categories:** Use the side panel to add (`➕ Category`), rename, or rearrange your folders.
+3.  **Manage Items:** Add new snippets in the central panel using the `➕ Item` button.
+4.  **Copy Quickly:** Double-click any text field in standard mode, or double-click a line in **NotePad Mode** to copy it instantly.
+5.  **Bulk Edit:** Use **NotePad Mode** to edit all items at once. Switching back will automatically split the lines back into individual items.
