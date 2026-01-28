@@ -12,8 +12,8 @@
     <!-- config for our rust wasm binary. go to https://trunkrs.dev/assets/#rust for more customization -->
     
 <script type="module">
-import init, * as bindings from '/ezclip-cd6fd7b182955abe.js';
-const wasm = await init({ module_or_path: '/ezclip-cd6fd7b182955abe_bg.wasm' });
+import init, * as bindings from '/ezclip-d125c75c7ca9f6ad.js';
+const wasm = await init({ module_or_path: '/ezclip-d125c75c7ca9f6ad_bg.wasm' });
 
 
 window.wasmBindings = bindings;
@@ -127,7 +127,7 @@ dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
             }
         }
     </style>
-<link rel="modulepreload" href="/ezclip-cd6fd7b182955abe.js" crossorigin="anonymous" integrity="sha384-5REGtxfR9qco9L21jb7lMzt2UjPNJzjWmm78Wv215EGK7j08E/dJpVC100SAJCGy"><link rel="preload" href="/ezclip-cd6fd7b182955abe_bg.wasm" crossorigin="anonymous" integrity="sha384-jRd83dR6FN78qVXKOv/74ZbaawpMlEL82aESRBCR19kpmw9MKAHMZH/c6KUzU0Ye" as="fetch" type="application/wasm"></head>
+<link rel="modulepreload" href="/ezclip-d125c75c7ca9f6ad.js" crossorigin="anonymous" integrity="sha384-5REGtxfR9qco9L21jb7lMzt2UjPNJzjWmm78Wv215EGK7j08E/dJpVC100SAJCGy"><link rel="preload" href="/ezclip-d125c75c7ca9f6ad_bg.wasm" crossorigin="anonymous" integrity="sha384-SJCS9OynuWoEbUfWF+Pj2a0aYTiEb9tL+Y/uuSpCm7jx/U4H/AW9olDlb/yrGpfM" as="fetch" type="application/wasm"></head>
 
 <body>
     <!-- The WASM code will resize the canvas dynamically -->
