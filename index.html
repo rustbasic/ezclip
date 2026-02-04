@@ -65,7 +65,7 @@ dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
         html,
         body {
             overflow: hidden;
-            overscroll-behavior: none;
+            /* overscroll-behavior: none; */
             margin: 0 !important;
             padding: 0 !important;
             height: 100%;
@@ -128,7 +128,7 @@ dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
             }
         }
     </style>
-<link rel="modulepreload" href="/ezclip/ezclip.js" crossorigin="anonymous" integrity="sha384-5REGtxfR9qco9L21jb7lMzt2UjPNJzjWmm78Wv215EGK7j08E/dJpVC100SAJCGy"><link rel="preload" href="/ezclip/ezclip_bg.wasm" crossorigin="anonymous" integrity="sha384-Pa4JJrr3MOXtqCzeQOZUl94kcJQXvKXPkZo5Vgs+sdz6RbN3upu/pg7o2B8r6LB+" as="fetch" type="application/wasm"></head>
+<link rel="modulepreload" href="/ezclip/ezclip.js" crossorigin="anonymous" integrity="sha384-5REGtxfR9qco9L21jb7lMzt2UjPNJzjWmm78Wv215EGK7j08E/dJpVC100SAJCGy"><link rel="preload" href="/ezclip/ezclip_bg.wasm" crossorigin="anonymous" integrity="sha384-5bzkvtRWDJj5bMfT3fh7aYPg1oCcK8htSm9Lcav5Kv66dioxF8mu9+ECN2KfMPhl" as="fetch" type="application/wasm"></head>
 
 <body>
     <!-- The WASM code will resize the canvas dynamically -->
