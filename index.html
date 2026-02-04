@@ -44,8 +44,8 @@ dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
     <style>
         html {
             /* Remove touch delay: */
-            touch-action: manipulation;
-            /* touch-action: none; */
+            /* touch-action: manipulation; */
+            touch-action: none;
         }
 
         body {
@@ -129,7 +129,7 @@ dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
             }
         }
     </style>
-<link rel="modulepreload" href="/ezclip/ezclip.js" crossorigin="anonymous" integrity="sha384-5REGtxfR9qco9L21jb7lMzt2UjPNJzjWmm78Wv215EGK7j08E/dJpVC100SAJCGy"><link rel="preload" href="/ezclip/ezclip_bg.wasm" crossorigin="anonymous" integrity="sha384-nOpd9lflZTtdVm1qUsOT6l3E0565NOY52CgSlAHIQAZ7cK7M0nU4Hqyl4/MB1Bja" as="fetch" type="application/wasm"></head>
+<link rel="modulepreload" href="/ezclip/ezclip.js" crossorigin="anonymous" integrity="sha384-5REGtxfR9qco9L21jb7lMzt2UjPNJzjWmm78Wv215EGK7j08E/dJpVC100SAJCGy"><link rel="preload" href="/ezclip/ezclip_bg.wasm" crossorigin="anonymous" integrity="sha384-Dux5JU+c1iCY57edTJZT0ovqD3I/wcQMHNQffaDycYMXYhf1xbRmKKWiLUGkXYMR" as="fetch" type="application/wasm"></head>
 
 <body>
     <!-- The WASM code will resize the canvas dynamically -->
