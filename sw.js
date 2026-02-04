@@ -1,9 +1,9 @@
-var cacheName = 'ezchat-pwa';
+var cacheName = 'ezclip-pwa';
 var filesToCache = [
   './',
   './index.html',
-  './ezchat.js',
-  './ezchat_bg.wasm',
+  './ezclip.js',
+  './ezclip_bg.wasm',
 ];
 
 /* Start the service worker and cache all of the app's content */
