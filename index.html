@@ -44,8 +44,8 @@ dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
     <style>
         html {
             /* Remove touch delay: */
-            /* touch-action: manipulation; */
-            touch-action: none;
+            touch-action: manipulation;
+            /* touch-action: none; */
         }
 
         body {
@@ -66,7 +66,7 @@ dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
         html,
         body {
             overflow: hidden;
-            overscroll-behavior: none;
+            /* overscroll-behavior: none; */
             margin: 0 !important;
             padding: 0 !important;
             height: 100%;
