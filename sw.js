@@ -1,9 +1,13 @@
-var cacheName = 'ezchat-pwa';
+// ezclip Version: v0.5.0
+// NOTE: Change the version number above whenever you update the app. 
+// This ensures the browser detects the change in sw.js and triggers a Service Worker update.
+
+var cacheName = 'ezclip-pwa';
 var filesToCache = [
   './',
   './index.html',
-  './ezchat.js',
-  './ezchat_bg.wasm',
+  './ezclip.js',
+  './ezclip_bg.wasm',
 ];
 
 /* Start the service worker and cache all of the app's content */
@@ -32,7 +36,6 @@ self.addEventListener('activate', function (e) {
   return self.clients.claim();
 });
 
-/* Serve cached content when offline */
 self.addEventListener('fetch', function (e) {
   e.respondWith(
     caches.match(e.request).then(function (response) {
