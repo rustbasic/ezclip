@@ -1612,7 +1612,7 @@ function __wbg_get_imports() {
         __wbg_unmap_2903d5b193373f12: function(arg0) {
             arg0.unmap();
         },
-        __wbg_updateApp_3bf84c71c112b1c6: function() {
+        __wbg_updateApp_df0617a74a807445: function() {
             updateApp();
         },
         __wbg_usage_7b00ab14a235fa77: function(arg0) {
