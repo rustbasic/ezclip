@@ -162,12 +162,29 @@ dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
         }
 
         window.updateApp = () => {
-            navigator.serviceWorker.getRegistration().then(reg => {
-                if (reg && reg.waiting) {
-                    reg.waiting.postMessage({ action: 'skipWaiting' });
-                }
-                window.location.reload();
-            });
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.getRegistration().then(reg => {
+                    if (reg) {
+                        reg.update().then(() => {
+                            if (reg.waiting) {
+                                reg.waiting.postMessage({ action: 'skipWaiting' });
+                                window.location.reload();
+                            } else {
+                                caches.keys().then(names => {
+                                    for (let name of names) caches.delete(name);
+                                });
+                                reg.unregister().then(() => {
+                                    window.location.reload(true);
+                                });
+                            }
+                        });
+                    } else {
+                        window.location.reload(true);
+                    }
+                });
+            } else {
+                window.location.reload(true);
+            }
         };
     </script>
 </body>
