@@ -13,8 +13,8 @@
     <!-- config for our rust wasm binary. go to https://trunkrs.dev/assets/#rust for more customization -->
     
 <script type="module">
-import init, * as bindings from '/ezclip/ezclip.js';
-const wasm = await init({ module_or_path: '/ezclip/ezclip_bg.wasm' });
+import init, * as bindings from '/ezclip/ezclip-45059cb92dab484a.js';
+const wasm = await init({ module_or_path: '/ezclip/ezclip-45059cb92dab484a_bg.wasm' });
 
 
 window.wasmBindings = bindings;
@@ -26,7 +26,7 @@ dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
     <!-- this is the base url relative to which other urls will be constructed. trunk will insert this from the public-url option -->
     <base href="/ezclip/" />
 
-    <link rel="icon" href="/ezclip/favicon.ico" integrity="sha384-jNOAE6jgE03LznIulCTVP6BH4NrTuROFjP9wj8bV1UUMJKtZAvstFpIAP3PDcFpx"/>
+    <link rel="icon" href="/ezclip/favicon-f402c8741ce815ec.ico" integrity="sha384-jNOAE6jgE03LznIulCTVP6BH4NrTuROFjP9wj8bV1UUMJKtZAvstFpIAP3PDcFpx"/>
 
 
     
@@ -128,7 +128,7 @@ dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
             }
         }
     </style>
-<link rel="modulepreload" href="/ezclip/ezclip.js" crossorigin="anonymous" integrity="sha384-tZGk8wbO1f1toGZVag4zBbS/90FknfOz570FPNX4Lq0LNxphss0JYr5TLgey4nAV"><link rel="preload" href="/ezclip/ezclip_bg.wasm" crossorigin="anonymous" integrity="sha384-WmXvVS0uV9DQI5RGQJ1shoKyX0UU/DubJhzFArEOlrVIYMmo+khCDNw6sLXbyahQ" as="fetch" type="application/wasm"></head>
+<link rel="modulepreload" href="/ezclip/ezclip-45059cb92dab484a.js" crossorigin="anonymous" integrity="sha384-ahpcuk93loa4JuFRhRc6AFPPpbivjYqPGrlqja2AhSJIZfqILTA5D2+yx+teFmUA"><link rel="preload" href="/ezclip/ezclip-45059cb92dab484a_bg.wasm" crossorigin="anonymous" integrity="sha384-/SG3Bq65VACwpGt13ZrfZah894jDAbJjCRLpVQ98oeZPzAp5dW89YzzYfqM1BWoe" as="fetch" type="application/wasm"></head>
 
 <body>
     <!-- The WASM code will resize the canvas dynamically -->
