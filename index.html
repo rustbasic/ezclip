@@ -1,28 +1,40 @@
 <!DOCTYPE html>
 <html>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
-<!-- Disable zooming: -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-
 <head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <!-- Disable zooming: -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
     <!-- change this to your project name -->
     <title> ezClip </title>
 
     <!-- config for our rust wasm binary. go to https://trunkrs.dev/assets/#rust for more customization -->
-    <link data-trunk rel="rust" data-wasm-opt="2" />
+    
+<script type="module">
+import init, * as bindings from '/ezclip/ezclip-fcd3abfeeafe1085.js';
+const wasm = await init({ module_or_path: '/ezclip/ezclip-fcd3abfeeafe1085_bg.wasm' });
+
+
+window.wasmBindings = bindings;
+
+
+dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
+
+</script>
     <!-- this is the base url relative to which other urls will be constructed. trunk will insert this from the public-url option -->
-    <base data-trunk-public-url />
+    <base href="/ezclip/" />
 
-    <link data-trunk rel="icon" href="assets/favicon.ico">
+    <link rel="icon" href="/ezclip/favicon-f402c8741ce815ec.ico" integrity="sha384-jNOAE6jgE03LznIulCTVP6BH4NrTuROFjP9wj8bV1UUMJKtZAvstFpIAP3PDcFpx"/>
 
 
-    <link data-trunk rel="copy-file" href="assets/sw.js"/>
-    <link data-trunk rel="copy-file" href="assets/manifest.json"/>
-    <link data-trunk rel="copy-file" href="assets/icon-1024.png" data-target-path="assets"/>
-    <link data-trunk rel="copy-file" href="assets/icon-256.png" data-target-path="assets"/>
-    <link data-trunk rel="copy-file" href="assets/icon_ios_touch_192.png" data-target-path="assets"/>
-    <link data-trunk rel="copy-file" href="assets/maskable_icon_x512.png" data-target-path="assets"/>
+    
+    
+    
+    
+    
+    
 
 
     <link rel="manifest" href="manifest.json">
@@ -54,7 +66,6 @@
         html,
         body {
             overflow: hidden;
-            overscroll-behavior: none;
             margin: 0 !important;
             padding: 0 !important;
             height: 100%;
@@ -117,7 +128,7 @@
             }
         }
     </style>
-</head>
+<link rel="modulepreload" href="/ezclip/ezclip-fcd3abfeeafe1085.js" crossorigin="anonymous" integrity="sha384-wzOFVinQAGzhrnkHr7IItU7BkZfVVofTtqI1bbQXwZO0yCxOOTHowT7usqykYO8a"><link rel="preload" href="/ezclip/ezclip-fcd3abfeeafe1085_bg.wasm" crossorigin="anonymous" integrity="sha384-HrSAdvg054iYG4t7MDzSP9PpyzrlHvwccr58Kth/ER+LimQx0J4q7Kjg9zznBOw6" as="fetch" type="application/wasm"></head>
 
 <body>
     <!-- The WASM code will resize the canvas dynamically -->
@@ -136,12 +147,45 @@
     <!--Register Service Worker. this will cache the wasm / js scripts for offline use (for PWA functionality). -->
     <!-- Force refresh (Ctrl + F5) to load the latest files instead of cached files  -->
     <script>
-        // We disable caching during development so that we always view the latest version.
+        // Check for Service Worker support and skip registration in development mode
         if ('serviceWorker' in navigator && window.location.hash !== "#dev") {
             window.addEventListener('load', function () {
-                navigator.serviceWorker.register('sw.js');
+                // Register service worker with 'updateViaCache: none' to bypass browser cache
+                navigator.serviceWorker.register('sw.js', { updateViaCache: 'none' })
+                    .then(registration => {
+                        console.log('Service Worker registered successfully with scope:', registration.scope);
+                    })
+                    .catch(error => {
+                        console.error('Service Worker registration failed:', error);
+                    });
             });
         }
+
+        window.updateApp = () => {
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.getRegistration().then(reg => {
+                    if (reg) {
+                        reg.update().then(() => {
+                            if (reg.waiting) {
+                                reg.waiting.postMessage({ action: 'skipWaiting' });
+                                window.location.reload();
+                            } else {
+                                caches.keys().then(names => {
+                                    for (let name of names) caches.delete(name);
+                                });
+                                reg.unregister().then(() => {
+                                    window.location.reload(true);
+                                });
+                            }
+                        });
+                    } else {
+                        window.location.reload(true);
+                    }
+                });
+            } else {
+                window.location.reload(true);
+            }
+        };
     </script>
 </body>
 
