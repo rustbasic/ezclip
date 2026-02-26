@@ -1,4 +1,4 @@
-var cacheName = 'ezclip-pwa';
+var cacheName = 'ezclip';
 var filesToCache = [
   './',
   './index.html',
